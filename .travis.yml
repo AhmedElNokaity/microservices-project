@@ -11,7 +11,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t "$DOCKER_USERNAME"/udagram-reverseproxy:latest udagram-reverseproxy/Dockerfile
+  - docker build -t "$DOCKER_USERNAME"/udagram-reverseproxy:latest udagram-reverseproxy
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
